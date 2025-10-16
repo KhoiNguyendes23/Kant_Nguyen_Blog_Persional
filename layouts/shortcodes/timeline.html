@@ -1,0 +1,10 @@
+{{ $profile := .Site.Data.profile }}
+<div class="timeline fade-up">
+  {{ range $profile.education_timeline }}
+    <div class="k-card">
+      <h3>{{ .title }}</h3>
+      <p class="text-sm text-gray-600 mb-2">{{ .period }}</p>
+      <p>{{ .details }}</p>
+    </div>
+  {{ end }}
+</div>

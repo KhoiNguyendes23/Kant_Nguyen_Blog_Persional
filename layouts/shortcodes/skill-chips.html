@@ -1,0 +1,6 @@
+{{ $profile := .Site.Data.profile }}
+<div class="chips fade-up">
+  {{ range $profile.skills }}
+    <span class="chip">{{ . }}</span>
+  {{ end }}
+</div>

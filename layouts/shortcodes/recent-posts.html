@@ -1,0 +1,10 @@
+{{ $posts := where .Site.RegularPages "Section" "posts" | first 3 }}
+<div class="grid fade-up">
+  {{ range $posts }}
+    <div class="k-card">
+      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+      <p class="text-sm text-gray-600">{{ .Date.Format "2/1/2006" }}</p>
+      <p>{{ .Summary }}</p>
+    </div>
+  {{ end }}
+</div>

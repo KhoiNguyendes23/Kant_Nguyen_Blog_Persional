@@ -1,0 +1,9 @@
+{{ $profile := .Site.Data.profile }}
+<div class="grid fade-up">
+  {{ range $profile.activities }}
+    <div class="k-card">
+      <h3>{{ .title }}</h3>
+      <p>{{ .desc }}</p>
+    </div>
+  {{ end }}
+</div>

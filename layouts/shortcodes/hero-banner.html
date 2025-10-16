@@ -1,0 +1,12 @@
+{{ $profile := .Site.Data.profile }}
+<div class="hero fade-up">
+  <div class="hero-inner">
+    <h1 class="hero-title">{{ $profile.name }}</h1>
+    <p class="text-xl mb-6">{{ $profile.tagline }}</p>
+    <div class="chips">
+      {{ range $profile.skills }}
+        <span class="chip">{{ . }}</span>
+      {{ end }}
+    </div>
+  </div>
+</div>

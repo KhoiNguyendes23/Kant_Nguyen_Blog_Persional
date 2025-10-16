@@ -1,0 +1,9 @@
+{{ $profile := .Site.Data.profile }}
+<div class="grid fade-up">
+  {{ range $profile.awards }}
+    <div class="k-card">
+      <h3>{{ .title }}</h3>
+      <p class="text-sm text-gray-600">{{ .org }} - {{ .year }}</p>
+    </div>
+  {{ end }}
+</div>
