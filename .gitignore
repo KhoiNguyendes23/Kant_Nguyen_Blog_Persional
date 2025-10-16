@@ -1,0 +1,28 @@
+# Hugo build
+/public/
+/resources/_gen/
+hugo_stats.json
+
+# Local configuration
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Node dependencies
+node_modules/
+
+# OS files
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# IDE / Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

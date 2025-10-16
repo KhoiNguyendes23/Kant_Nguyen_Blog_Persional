@@ -1,0 +1,69 @@
+name: "Kant Nguyễn"
+tagline: "Sinh viên CNTT HUTECH — sắp bước vào thị trường lao động, sẵn sàng kết nối và học hỏi."
+email: "khoind82@gmail.com"
+github: "https://github.com/KhoiNguyendes23"
+linkedin: "https://www.linkedin.com/in/nguyen-dang-khoi-6247a337b/"
+location: "TP.HCM, Việt Nam"
+
+skills:
+  - Java Backend
+  - Spring Boot
+  - REST API
+  - Networking (TCP, UDP, HTTP)
+  - JavaScript Essentials
+  - Git/GitHub
+  - Database (MySQL/PostgreSQL)
+
+career_goal: >
+  Trở thành một lập trình viên backend Java chuyên nghiệp, có khả năng xây dựng và tối ưu hóa hệ thống mạng, dịch vụ web và API hiệu năng cao.
+  Hướng tới phát triển bền vững, bảo mật, và đóng góp cho cộng đồng công nghệ trong tương lai.
+
+education_timeline:
+  - title: "Làm quen với lập trình Java và tư duy hướng đối tượng"
+    period: "2022–2023"
+    details: >
+      Học Java Core, OOP, và các nguyên lý lập trình cơ bản.
+      Thực hành các bài tập console, nắm vững cú pháp và cấu trúc chương trình.
+  - title: "Khám phá lập trình web và phát triển ứng dụng"
+    period: "2023–2024"
+    details: >
+      Tìm hiểu HTML, CSS, JavaScript; xây dựng các trang web tĩnh và động.
+      Làm quen với Spring Boot và mô hình MVC trong phát triển web.
+  - title: "Tiếp cận lập trình di động và lập trình mạng"
+    period: "2024–2025"
+    details: >
+      Học lập trình Android cơ bản, giao tiếp API, kết nối mạng TCP/UDP.
+      Phát triển các ứng dụng trao đổi dữ liệu và dự án mini về socket, REST API.
+  - title: "Củng cố kiến thức cơ sở dữ liệu và hệ thống"
+    period: "2025–2026"
+    details: >
+      Làm việc với MySQL, PostgreSQL và ORM trong Java.
+      Tích hợp cơ sở dữ liệu với ứng dụng web, tối ưu truy vấn và bảo mật.
+      Chuẩn bị hành trang nghề nghiệp — tổng hợp kỹ năng lập trình toàn diện.
+
+activities:
+  - title: "Giải bóng chuyền Khoa CNTT"
+    desc: "Tham gia năm 2022, 2023; đạt giải Nhất năm 2023."
+  - title: "Giải cầu lông Khoa CNTT"
+    desc: "Tham gia năm 2024."
+  - title: "HUTECH - IT Got Talent"
+    desc: "Tham gia cuộc thi công nghệ, sáng tạo và thuyết trình ý tưởng."
+  - title: "Hoạt động sinh viên"
+    desc: "Tham gia hoạt động giao lưu và chia sẻ kiến thức công nghệ."
+
+awards:
+  - title: "Giải Nhất Bóng chuyền"
+    org: "Khoa CNTT - HUTECH"
+    year: 2023
+  - title: "Sinh viên tiêu biểu"
+    org: "Khoa CNTT - HUTECH"
+    year: 2023
+  - title: "Chứng chỉ Networking Basics"
+    org: "Cisco"
+    year: 2024
+  - title: "Chứng chỉ JavaScript Essentials 1"
+    org: "Cisco"
+    year: 2024
+  - title: "Chứng chỉ JavaScript Essentials 2"
+    org: "Cisco"
+    year: 2025
