@@ -27,12 +27,12 @@ chat-app/
 import { WebSocketServer } from "ws";
 const wss = new WebSocketServer({ port: 8080 });
 
-wss.on("connection", ws => {
+wss.on("connection", (ws) => {
   console.log("Client connected");
-  ws.on("message", msg => {
+  ws.on("message", (msg) => {
     console.log("Received:", msg.toString());
     // gửi lại cho tất cả client
-    wss.clients.forEach(client => {
+    wss.clients.forEach((client) => {
       if (client.readyState === 1) client.send(msg.toString());
     });
   });
@@ -45,30 +45,33 @@ console.log("✅ Server WebSocket chạy tại ws://localhost:8080");
 ```html
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8"><title>Realtime Chat</title></head>
-<body>
-  <h3>💬 Chat Realtime</h3>
-  <div id="messages"></div>
-  <input id="msg" placeholder="Nhập tin nhắn..." autofocus>
-  <script>
-    const ws = new WebSocket("ws://localhost:8080");
-    const msgBox = document.getElementById("msg");
-    const messages = document.getElementById("messages");
+  <head>
+    <meta charset="utf-8" />
+    <title>Realtime Chat</title>
+  </head>
+  <body>
+    <h3>💬 Chat Realtime</h3>
+    <div id="messages"></div>
+    <input id="msg" placeholder="Nhập tin nhắn..." autofocus />
+    <script>
+      const ws = new WebSocket("ws://localhost:8080");
+      const msgBox = document.getElementById("msg");
+      const messages = document.getElementById("messages");
 
-    ws.onmessage = (e) => {
-      const p = document.createElement("p");
-      p.textContent = e.data;
-      messages.appendChild(p);
-    };
+      ws.onmessage = (e) => {
+        const p = document.createElement("p");
+        p.textContent = e.data;
+        messages.appendChild(p);
+      };
 
-    msgBox.addEventListener("keypress", (e) => {
-      if (e.key === "Enter") {
-        ws.send(msgBox.value);
-        msgBox.value = "";
-      }
-    });
-  </script>
-</body>
+      msgBox.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          ws.send(msgBox.value);
+          msgBox.value = "";
+        }
+      });
+    </script>
+  </body>
 </html>
 ```
 

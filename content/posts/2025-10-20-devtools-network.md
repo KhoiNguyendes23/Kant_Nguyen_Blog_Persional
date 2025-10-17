@@ -15,14 +15,14 @@ thì bạn đang bỏ lỡ một trong những công cụ debug mạnh nhất c�
 
 🔍 **Những phần chính trong tab Network**
 
-| Mục | Ý nghĩa |
-|-----|---------|
-| Name | Tên file/request |
-| Status | Mã phản hồi HTTP |
-| Type | Loại tài nguyên (xhr, fetch, js, img...) |
-| Initiator | Ai gọi request |
-| Time | Thời gian xử lý |
-| Waterfall | Biểu đồ thời gian chi tiết |
+| Mục       | Ý nghĩa                                  |
+| --------- | ---------------------------------------- |
+| Name      | Tên file/request                         |
+| Status    | Mã phản hồi HTTP                         |
+| Type      | Loại tài nguyên (xhr, fetch, js, img...) |
+| Initiator | Ai gọi request                           |
+| Time      | Thời gian xử lý                          |
+| Waterfall | Biểu đồ thời gian chi tiết               |
 
 ---
 
@@ -32,7 +32,7 @@ Gọi API trong JS:
 
 ```javascript
 fetch("https://jsonplaceholder.typicode.com/posts/1")
-  .then(res => res.json())
+  .then((res) => res.json())
   .then(console.log);
 ```
 

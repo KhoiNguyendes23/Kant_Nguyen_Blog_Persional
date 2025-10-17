@@ -9,6 +9,7 @@ series: "Lập trình mạng với Java"
 🧠 **Tổng quan**
 
 HTTPS (HTTP Secure) là phiên bản bảo mật của HTTP, sử dụng TLS/SSL để mã hóa dữ liệu truyền tải. Điều này đảm bảo:
+
 - **Confidentiality**: Dữ liệu được mã hóa
 - **Integrity**: Dữ liệu không bị thay đổi
 - **Authentication**: Xác thực danh tính server
@@ -30,16 +31,16 @@ public class HttpsExample {
     public static void main(String[] args) {
         HttpClient client = HttpClient.newBuilder()
             .build();
-        
+
         HttpRequest request = HttpRequest.newBuilder()
             .uri(URI.create("https://api.github.com/users/octocat"))
             .GET()
             .build();
-            
+
         try {
-            HttpResponse<String> response = client.send(request, 
+            HttpResponse<String> response = client.send(request,
                 HttpResponse.BodyHandlers.ofString());
-            
+
             System.out.println("Status: " + response.statusCode());
             System.out.println("Body: " + response.body());
         } catch (IOException | InterruptedException e) {
@@ -73,25 +74,25 @@ public class CustomSslExample {
                     public void checkServerTrusted(X509Certificate[] certs, String authType) { }
                 }
             };
-            
+
             SSLContext sslContext = SSLContext.getInstance("TLS");
             sslContext.init(null, trustAllCerts, new java.security.SecureRandom());
-            
+
             HttpClient client = HttpClient.newBuilder()
                 .sslContext(sslContext)
                 .build();
-            
+
             HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://self-signed.badssl.com/"))
                 .GET()
                 .build();
-                
-            HttpResponse<String> response = client.send(request, 
+
+            HttpResponse<String> response = client.send(request,
                 HttpResponse.BodyHandlers.ofString());
-            
+
             System.out.println("Status: " + response.statusCode());
             System.out.println("Body: " + response.body());
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -118,28 +119,28 @@ public class ClientCertExample {
             // Load client certificate
             KeyStore keyStore = KeyStore.getInstance("PKCS12");
             keyStore.load(new FileInputStream("client-cert.p12"), "password".toCharArray());
-            
+
             KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
             kmf.init(keyStore, "password".toCharArray());
-            
+
             SSLContext sslContext = SSLContext.getInstance("TLS");
             sslContext.init(kmf.getKeyManagers(), null, null);
-            
+
             HttpClient client = HttpClient.newBuilder()
                 .sslContext(sslContext)
                 .build();
-            
+
             HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://api.secure-server.com/data"))
                 .GET()
                 .build();
-                
-            HttpResponse<String> response = client.send(request, 
+
+            HttpResponse<String> response = client.send(request,
                 HttpResponse.BodyHandlers.ofString());
-            
+
             System.out.println("Status: " + response.statusCode());
             System.out.println("Body: " + response.body());
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -26,16 +26,16 @@ import java.io.IOException;
 public class HttpClientExample {
     public static void main(String[] args) {
         HttpClient client = HttpClient.newHttpClient();
-        
+
         HttpRequest request = HttpRequest.newBuilder()
             .uri(URI.create("https://jsonplaceholder.typicode.com/posts/1"))
             .GET()
             .build();
-            
+
         try {
-            HttpResponse<String> response = client.send(request, 
+            HttpResponse<String> response = client.send(request,
                 HttpResponse.BodyHandlers.ofString());
-            
+
             System.out.println("Status: " + response.statusCode());
             System.out.println("Body: " + response.body());
         } catch (IOException | InterruptedException e) {
@@ -59,7 +59,7 @@ import java.io.IOException;
 public class PostExample {
     public static void main(String[] args) {
         HttpClient client = HttpClient.newHttpClient();
-        
+
         String jsonData = """
             {
                 "title": "Bài viết mới",
@@ -67,17 +67,17 @@ public class PostExample {
                 "userId": 1
             }
             """;
-        
+
         HttpRequest request = HttpRequest.newBuilder()
             .uri(URI.create("https://jsonplaceholder.typicode.com/posts"))
             .header("Content-Type", "application/json")
             .POST(BodyPublishers.ofString(jsonData))
             .build();
-            
+
         try {
-            HttpResponse<String> response = client.send(request, 
+            HttpResponse<String> response = client.send(request,
                 BodyHandlers.ofString());
-            
+
             System.out.println("Status: " + response.statusCode());
             System.out.println("Response: " + response.body());
         } catch (IOException | InterruptedException e) {
@@ -99,19 +99,19 @@ import java.util.concurrent.CompletableFuture;
 public class AsyncExample {
     public static void main(String[] args) {
         HttpClient client = HttpClient.newHttpClient();
-        
+
         HttpRequest request = HttpRequest.newBuilder()
             .uri(URI.create("https://jsonplaceholder.typicode.com/posts"))
             .GET()
             .build();
-            
-        CompletableFuture<HttpResponse<String>> future = 
+
+        CompletableFuture<HttpResponse<String>> future =
             client.sendAsync(request, HttpResponse.BodyHandlers.ofString());
-            
+
         future.thenAccept(response -> {
             System.out.println("Async Response: " + response.body());
         });
-        
+
         // Chờ async request hoàn thành
         future.join();
     }

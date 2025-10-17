@@ -21,16 +21,12 @@ Khi bạn vào một website mà vẫn chạy được dù mất mạng,
 const CACHE_NAME = "v1-cache";
 const URLS = ["/", "/index.html", "/app.js", "/style.css"];
 
-self.addEventListener("install", e => {
-  e.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(URLS))
-  );
+self.addEventListener("install", (e) => {
+  e.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(URLS)));
 });
 
-self.addEventListener("fetch", e => {
-  e.respondWith(
-    caches.match(e.request).then(res => res || fetch(e.request))
-  );
+self.addEventListener("fetch", (e) => {
+  e.respondWith(caches.match(e.request).then((res) => res || fetch(e.request)));
 });
 ```
 
